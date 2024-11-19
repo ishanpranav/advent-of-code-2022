@@ -7,37 +7,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define BUFFER_SIZE 8192
+#define BUFFER_SIZE 32
 
 int main()
 {
-    int count = 0;
+    int n = 0;
     char buffer[BUFFER_SIZE];
-    bool discovered[256] = { false };
-    size_t index = 0;
-    size_t read = fread(buffer, 1, BUFFER_SIZE, stdin);
 
-    while (index < read)
+    while (fgets(buffer, BUFFER_SIZE, stdin))
     {
-        if (discovered[(int)buffer[index]])
-        {
-            index -= count - 1;
-            count = 0;
-
-            memset(discovered, false, 256);
-        }
-
-        discovered[(int)buffer[index]] = true;
-        count++;
-        index++;
-
-        if (count == 14)
-        {
-            break;
-        }
+        
     }
 
-    printf("%zu\n", index);
+    printf("%d\n", n);
 
     return EXIT_SUCCESS;
 }

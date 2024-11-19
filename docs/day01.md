@@ -1,6 +1,6 @@
 <!-- day01.md -->
 
-# Day 1: Calorie counting
+# Day 1: Calorie Counting
 
 Let $L$ be a set where for all $\ell\in L$, $\ell$ is a list such that for all
 $e\in\ell$, we have $e\in\mathbb{N}$.

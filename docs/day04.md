@@ -1,6 +1,6 @@
 <!-- day04.md -->
 
-# Day 4: Camp cleanup
+# Day 4: Camp Cleanup
 
 Let $\ell$ be a list where for all $((a_0,a_1),(b_0,b_1))\in\ell$, we have
 $a_0,a_1,b_0,b_1\in\mathbb{N}$.

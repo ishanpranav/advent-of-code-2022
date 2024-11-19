@@ -1,6 +1,6 @@
 <!-- day01.md -->
 
-# Day 2: Rock, paper, scissors
+# Day 2: Rock, Paper, Scissors
 
 ## Part A
 

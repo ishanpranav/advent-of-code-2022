@@ -28,9 +28,11 @@ While $S$ is not empty, do:
   * for $\{u,v\}\in E$, push $u$ onto $S$;
   * assign $D\leftarrow D\cup\{v\}$.
 
+Return $W$.
+
 ## Part A
 
-Perform Algorithm I.
+Let $W$ be the result of Algorithm I.
 
 Let $a\leftarrow 0$.
 

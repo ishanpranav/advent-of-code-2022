@@ -4,7 +4,7 @@
 
 Let $\ell$ be a list where for all $e\in\ell$, we have $e\in\mathbb{Z}$.
 
-**Algorithm I.**
+**Algorithm I with argument $k\in\mathbb{N}$.**
 
 Let $n\leftarrow 0$.
 

@@ -51,5 +51,10 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# Advent of Code puzzle inputs
+# Advent of Code 2022
 data/day*.txt
+src/day*
+!src/day*.c
+
+# Visual Studio Code
+.vscode/

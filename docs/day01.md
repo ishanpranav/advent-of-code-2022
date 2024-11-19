@@ -3,7 +3,7 @@
 # Day 1: Calorie counting
 
 Let $L$ be a set where for all $\ell\in L$, $\ell$ is a list such that for all
-$e\in\ell$, we have $e\in\mathbb{Z}$.
+$e\in\ell$, we have $e\in\mathbb{N}$.
 
 ## Part A
 

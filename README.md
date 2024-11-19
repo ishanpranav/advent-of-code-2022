@@ -5,6 +5,10 @@ This is a collection of solutions to the
 implemented in the C programming language. I am focusing on efficient solutions
 and including formal pseudocode with each solution.
 
+## Authors
+
+Ishan Pranav and Iris Lim
+
 ## Usage
 
 These programs are cross-platform, having been tested on Windows and Linux
@@ -19,3 +23,7 @@ the input, sometimes even at the cost of performance. However, to avoid memory
 allocation, all buffers have fixed sizes. Ensure that all buffers (see `#define`
 statements) have sufficient capacity before running. Not doing so could result
 in a stack smashing, segmentation fault, or worse.
+
+## Omissions
+
+* We have decided to omit Day 5(a) and (b) on principle.

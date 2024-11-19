@@ -1,10 +1,9 @@
 // day03a.c
 // Licensed under the MIT license.
 
-// Rucksack reorganization
+// Rucksack Reorganization
 
 #include <ctype.h>
-#include <limits.h>
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
@@ -14,7 +13,7 @@
 static int main_step(char buffer[BUFFER_SIZE])
 {
     size_t length = strlen(buffer) / 2;
-    bool discovered[UCHAR_MAX] = { false };
+    bool discovered[256] = { false };
 
     for (size_t i = 0; i < length; i++)
     {

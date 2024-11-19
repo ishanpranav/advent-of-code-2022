@@ -1,7 +1,7 @@
 // day02a.c
 // Licensed under the MIT license.
 
-// Rock, paper, scissors
+// Rock, Paper, Scissors
 
 #include <stdio.h>
 #include <stdlib.h>

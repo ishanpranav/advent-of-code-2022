@@ -1,10 +1,8 @@
 // day04a.c
 // Licensed under the MIT license.
 
-// Camp cleanup
+// Camp Cleanup
 
-#include <limits.h>
-#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

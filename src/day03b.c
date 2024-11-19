@@ -1,9 +1,8 @@
 // day03b.c
 // Licensed under the MIT license.
 
-// Rucksack reorganization
+// Rucksack Reorganization
 
-#include <limits.h>
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,7 +12,7 @@
 static int main_step(char buffer[3][BUFFER_SIZE])
 {
     printf("(1) '%s' (2) '%s' (3) '%s'", buffer[0], buffer[1], buffer[2]);
-    int count[UCHAR_MAX] = { 0 };
+    int count[256] = { 0 };
 
     for (char* p = buffer[0]; *p != '\n' && *p != '\0'; p++)
     {

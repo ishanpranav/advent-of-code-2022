@@ -11,7 +11,6 @@
 
 static int main_step(char buffer[3][BUFFER_SIZE])
 {
-    printf("(1) '%s' (2) '%s' (3) '%s'", buffer[0], buffer[1], buffer[2]);
     int count[256] = { 0 };
 
     for (char* p = buffer[0]; *p != '\n' && *p != '\0'; p++)
@@ -38,8 +37,6 @@ static int main_step(char buffer[3][BUFFER_SIZE])
             {
                 priority -= 'a';
             }
-
-            printf("found '%c' %d\n", *p, priority);
 
             return priority;
         }

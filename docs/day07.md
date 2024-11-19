@@ -2,15 +2,17 @@
 
 # Day 7: No Space Left on Device
 
-Let $T=(V,E)$ be a tree. For $v\in V$, if $v$ is a leaf, then let $w(v)$ denote the weight of leaf $v$. Assume, without loss of generality, that $V=\{1,\dots,|V|\}$. 
+Let $T=(V,E)$ be a tree. Let $L\subseteq V$ denote the set of leaves in $T$. Let $w(v)$ denote
+the weight of $v\in L$. Assume, without loss of generality, that
+$V=\{1,\dots,|V|\}$.
 
-Let $W[1,\dots,|V|]$ be a $|V|$-element array, where $W[v]=w(v)$ for all leaves $v\in V$.
+**Algorithm I.**
 
-Let $D[1,\dots|V|]$ be a $|V|$-element array, where $D[v]\in\{\verb|true|,\verb|false|\}$ for all vertices $v\in V$.
+Initialize a $|V|$-element array $W[1,\dots,|V|]$.
 
-Let $S$ be a stack.
+Initialize a stack $S$.
 
-For all $v\in V$, let $D[v]\leftarrow\verb|false|.$
+Let $D\leftarrow\emptyset$.
 
 Let $v\leftarrow v\in V$, arbitrarily.
 
@@ -19,6 +21,21 @@ Push $v$ onto $S$.
 While $S$ is not empty, do:
 
 * $v\leftarrow$ pop $v$ off of $S$;
-* if $D[v]$, then continue to next;
-* assign $D[v]\leftarrow\verb|true|$;
-* for $\{u,v\}\in E$, push $u$ onto $S$.
+* if $v\in D$, then:
+  * if $v\in L$, then assign $W[v]\leftarrow w(v)$;
+  * otherwise, assign $W[v]\leftarrow\sum_{\{u,v\}\in E}W[u]$;
+* otherwise:
+  * for $\{u,v\}\in E$, push $u$ onto $S$;
+  * assign $D\leftarrow D\cup\{v\}$.
+
+## Part A
+
+Perform Algorithm I.
+
+Let $a\leftarrow 0$.
+
+For $v\in V\setminus L$:
+
+* if $W[v]\geq 10000$, then assign $a\leftarrow a+1$.
+
+Return $a$.

@@ -11,33 +11,33 @@
 
 int main()
 {
-    int count = 0;
     char buffer[BUFFER_SIZE];
-    bool discovered[256] = { false };
-    size_t index = 0;
+    size_t i = 0;
+    int n = 0;
+    bool d[256] = { false };
     size_t read = fread(buffer, 1, BUFFER_SIZE, stdin);
 
-    while (index < read)
+    while (i < read)
     {
-        if (discovered[(int)buffer[index]])
+        if (d[(int)buffer[i]])
         {
-            index -= count - 1;
-            count = 0;
+            i -= n - 1;
+            n = 0;
 
-            memset(discovered, false, 256);
+            memset(d, false, 256);
         }
 
-        discovered[(int)buffer[index]] = true;
-        count++;
-        index++;
+        d[(int)buffer[i]] = true;
+        i++;
+        n++;
 
-        if (count == 14)
+        if (n == 14)
         {
             break;
         }
     }
 
-    printf("%zu\n", index);
+    printf("%zu\n", i);
 
     return EXIT_SUCCESS;
 }

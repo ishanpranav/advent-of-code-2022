@@ -1,7 +1,7 @@
 // day01b.c
 // Licensed under the MIT license.
 
-// Calorie Counting
+// Calorie counting
 
 #include <stdio.h>
 #include <stdlib.h>

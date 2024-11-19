@@ -4,10 +4,16 @@
 CC = clang
 CFLAGS = -O3 -pedantic -std=c99 -Wall -Wextra
 
-all: day01a day01b
+all: day01a day01b day02a day02b
 
 day01a: day01a.c
 	$(CC) $(CFLAGS) $< -o $@
 
 day01b: day01b.c
+	$(CC) $(CFLAGS) $< -o $@
+
+day02a: day02a.c
+	$(CC) $(CFLAGS) $< -o $@
+
+day02b: day02b.c
 	$(CC) $(CFLAGS) $< -o $@

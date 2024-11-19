@@ -12,11 +12,11 @@ $$\underset{\ell\in L}{\max}\sum_{e\in\ell}e.$$
 
 ## Part B
 
-Let $m_0=0$.
+Let $m_0\leftarrow 0$.
 
-Let $m_1=0$.
+Let $m_1\leftarrow 0$.
 
-Let $m_2=0$.
+Let $m_2\leftarrow 0$.
 
 For $\ell\in L$:
 

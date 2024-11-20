@@ -4,41 +4,15 @@
 CC = clang
 CFLAGS = -O3 -pedantic -std=c99 -Wall -Wextra
 
-all: day01a day01b day02a day02b day03a day03b day04a day04b day06a day06b \
-	day07a day07b
+all: init \
+	day01a day01b day02a day02b day03a day03b day04a day04b \
+	day06a day06b day07a day07b day08a day08b day09a day09b day10a day10b \
+	day11a day11b day12a day12b day13a day13b day14a day14b day15a day15b \
+	day16a day16b day17a day17b day18a day18b day19a day19b day20a day20b \
+	day21a day21b day22a day22b day23a day23b day24a day24b day25z
 
-day01a: day01a.c
-	$(CC) $(CFLAGS) $< -o $@
+init:
+	mkdir ../bin
 
-day01b: day01b.c
-	$(CC) $(CFLAGS) $< -o $@
-
-day02a: day02a.c
-	$(CC) $(CFLAGS) $< -o $@
-
-day02b: day02b.c
-	$(CC) $(CFLAGS) $< -o $@
-
-day03a: day03a.c
-	$(CC) $(CFLAGS) $< -o $@
-
-day03b: day03b.c
-	$(CC) $(CFLAGS) $< -o $@
-
-day04a: day04a.c
-	$(CC) $(CFLAGS) $< -o $@
-
-day04b: day04b.c
-	$(CC) $(CFLAGS) $< -o $@
-
-day06a: day06a.c
-	$(CC) $(CFLAGS) $< -o $@
-
-day06b: day06b.c
-	$(CC) $(CFLAGS) $< -o $@
-
-day07a: day07a.c
-	$(CC) $(CFLAGS) $< -o $@
-
-day07b: day07b.c
-	$(CC) $(CFLAGS) $< -o $@
+%: %.c
+	$(CC) $(CFLAGS) $< -o ../bin/$@

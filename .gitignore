@@ -53,8 +53,7 @@ dkms.conf
 
 # Advent of Code 2022
 data/day*.txt
-src/day*
-!src/day*.c
+bin/
 
 # Visual Studio Code
 .vscode/

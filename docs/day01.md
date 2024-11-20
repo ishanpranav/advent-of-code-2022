@@ -1,4 +1,5 @@
 <!-- day01.md -->
+<!-- Licensed under the MIT license. -->
 
 # Day 1: Calorie Counting
 

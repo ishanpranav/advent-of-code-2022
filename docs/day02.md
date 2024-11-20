@@ -1,4 +1,5 @@
 <!-- day01.md -->
+<!-- Licensed under the MIT license. -->
 
 # Day 2: Rock, Paper, Scissors
 

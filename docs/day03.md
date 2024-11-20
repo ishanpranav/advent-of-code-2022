@@ -1,4 +1,5 @@
 <!-- day03.md -->
+<!-- Licensed under the MIT license. -->
 
 # Day 3: Rucksack Reorganization
 
@@ -12,10 +13,10 @@ Let $D\leftarrow\{a_i\,|\,1\leq i\leq n\}$.
 For $i\in(n,\dots,2n)$:
 
 * if $a_i\in D$, then return $p(a_i)$.
-  
+
 ## Part B
 
-Let $\ell_0,\ell_1,\ell_2$ be lists. Let $e^*\in \ell_0$, $e^*\in\ell_1$, and
+Let $\ell_0,\ell_1,\ell_2$ be lists. Let $e^*\in\ell_0$, $e^*\in\ell_1$, and
 $e^*\in\ell_2$. For $1\leq i\leq 2$, for all $e\in\ell_i$, we have
 $e\in\{0,\dots,255\}$. Let $p(e)$ denote the priority of $e\in\{0,\dots,255\}$.
 

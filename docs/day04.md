@@ -1,4 +1,5 @@
 <!-- day04.md -->
+<!-- Licensed under the MIT license. -->
 
 # Day 4: Camp Cleanup
 

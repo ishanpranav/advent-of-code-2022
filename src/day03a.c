@@ -13,7 +13,7 @@
 static int main_step(char a[BUFFER_SIZE])
 {
     size_t length = strlen(a) / 2;
-    bool discovered[256] = { false };
+    bool discovered[256] = { 0 };
 
     for (size_t i = 0; i < length; i++)
     {

@@ -1,4 +1,5 @@
 <!-- day07.md -->
+<!-- Licensed under the MIT license. -->
 
 # Day 7: No Space Left on Device
 

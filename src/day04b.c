@@ -16,9 +16,9 @@ int main()
     while (fgets(buffer, BUFFER_SIZE, stdin))
     {
         char* comma = strchr(buffer, ',');
-        char* hyphen = strchr(buffer, '-');
+        char* firstHyphen = strchr(buffer, '-');
         char* secondHyphen = strchr(comma, '-');
-        int a[2] = { atoi(buffer), atoi(hyphen + 1) };
+        int a[2] = { atoi(buffer), atoi(firstHyphen + 1) };
         int b[2] = { atoi(comma + 1), atoi(secondHyphen + 1) };
 
         if ((b[0] <= a[0] && a[0] <= b[1]) ||

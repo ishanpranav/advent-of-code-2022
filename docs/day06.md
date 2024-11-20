@@ -1,4 +1,5 @@
 <!-- day06.md -->
+<!-- Licensed under the MIT license. -->
 
 # Day 6: Tuning Trouble
 

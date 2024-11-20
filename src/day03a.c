@@ -10,23 +10,23 @@
 #include <string.h>
 #define BUFFER_SIZE 64
 
-static int main_step(char buffer[BUFFER_SIZE])
+static int main_step(char a[BUFFER_SIZE])
 {
-    size_t length = strlen(buffer) / 2;
+    size_t length = strlen(a) / 2;
     bool discovered[256] = { false };
 
     for (size_t i = 0; i < length; i++)
     {
-        discovered[(int)buffer[i]] = true;
+        discovered[(int)a[i]] = true;
     }
 
     for (size_t i = length; i < length * 2; i++)
     {
-        if (discovered[(int)buffer[i]])
+        if (discovered[(int)a[i]])
         {
-            int priority = buffer[i] + 1;
+            int priority = a[i] + 1;
 
-            if (isupper(buffer[i]))
+            if (isupper(a[i]))
             {
                 priority -= 'A' - 26;
             }

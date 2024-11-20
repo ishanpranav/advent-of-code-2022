@@ -9,23 +9,23 @@
 #include <string.h>
 #define BUFFER_SIZE 64
 
-static int main_step(char buffer[3][BUFFER_SIZE])
+static int main_step(char l[3][BUFFER_SIZE])
 {
-    int count[256] = { 0 };
+    int f[256] = { 0 };
 
-    for (char* p = buffer[0]; *p != '\n' && *p != '\0'; p++)
+    for (char* p = l[0]; *p != '\n' && *p != '\0'; p++)
     {
-        count[(int)*p] |= 0x1;
+        f[(int)*p] |= 0x1;
     }
     
-    for (char* p = buffer[1]; *p != '\n' && *p != '\0'; p++)
+    for (char* p = l[1]; *p != '\n' && *p != '\0'; p++)
     {
-        count[(int)*p] |= 0x2;
+        f[(int)*p] |= 0x2;
     }
     
-    for (char* p = buffer[2]; *p != '\n' && *p != '\0'; p++)
+    for (char* p = l[2]; *p != '\n' && *p != '\0'; p++)
     {
-        if (count[(int)*p] == 0x3)
+        if (f[(int)*p] == 0x3)
         {
             int priority = *p + 1;
 

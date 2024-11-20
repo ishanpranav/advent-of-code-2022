@@ -2,13 +2,12 @@
 
 # Day 7: No Space Left on Device
 
-Let $T=(V,E)$ be a tree. Let $L\subseteq V$ denote the set of leaves in $T$. Let $w(v)$ denote
-the weight of $v\in L$. Assume, without loss of generality, that
-$V=\{1,\dots,|V|\}$.
+Let $T=(V,E)$ be a tree. Let $L\subseteq V$ denote the set of leaves in $T$.
+Let $w^*(v)$ denote the weight of $v\in L$.
 
 **Algorithm I.**
 
-Initialize a $|V|$-element array $W[1,\dots,|V|]$.
+Define $w_v$ for $v\in V$.
 
 Initialize a stack $S$.
 
@@ -20,10 +19,11 @@ Push $v$ onto $S$.
 
 While $S$ is not empty, do:
 
-* $v\leftarrow$ pop $v$ off of $S$;
+* $v\leftarrow$ top of $S$;
 * if $v\in D$, then:
-  * if $v\in L$, then assign $W[v]\leftarrow w(v)$;
-  * otherwise, assign $W[v]\leftarrow\sum_{\{u,v\}\in E}W[u]$;
+  * if $v\in L$, then assign $w_v\leftarrow w^*(v)$;
+  * otherwise, assign $w_v\leftarrow\sum_{\{u,v\}\in E}w_u$;
+  * pop $S$;
 * otherwise:
   * for $\{u,v\}\in E$, push $u$ onto $S$;
   * assign $D\leftarrow D\cup\{v\}$.

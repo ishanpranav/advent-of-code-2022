@@ -1,10 +1,3 @@
-% day01.tex
-% Licensed under the MIT license.
-
-\documentclass{article}
-\begin{document}
-Hello, world!
-\begin{code}
 <!-- day01.md -->
 <!-- Licensed under the MIT license. -->
 
@@ -43,5 +36,3 @@ For $\ell\in L$:
 
 Return
 $$\sum_{i=0}^2{m_i}.$$
-\end{code}
-\end{document}

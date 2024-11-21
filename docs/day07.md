@@ -4,9 +4,11 @@
 # Day 7: No Space Left on Device
 
 Let $T=(V,E)$ be a tree. Let $L\subseteq V$ denote the set of leaves in $T$.
-Let $w^\ast(v)$ denote the weight of $v\in L$.
+Let $w^\ast:L\to\mathbb{Z}$.
 
 **Algorithm I.**
+
+If $V=\emptyset$, return nothing.
 
 Define $w_v$ for $v\in V$.
 
@@ -35,10 +37,6 @@ Return $w_v$ for $v\in V$.
 
 Let $w_v$ for $v\in V$ be given by Algorithm I.
 
-Let $a\leftarrow 0$.
+Let $V'=\lbrace v\,:\, v\in V,v\notin L, w_v\leq 100000\rbrace$.
 
-For $v\in V\setminus L$:
-
-* if $w_v\leq 10000$, then assign $a\leftarrow a+1$.
-
-Return $a$.
+Return $\underset{v\in V'}{\sum}{v}$.

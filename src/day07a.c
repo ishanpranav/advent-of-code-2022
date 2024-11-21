@@ -3,6 +3,7 @@
 
 // No Space Left On Device
 
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -14,21 +15,22 @@ typedef struct Tree Tree;
 
 struct Tree
 {
+    unsigned int nameLength;
     unsigned long weight;
-    char name[BUFFER_SIZE];
+    char* name;
     Tree* parent;
     Tree* firstChild;
     Tree* nextSibling;
 };
 
-Tree* tree_print(Tree* t, int depth)
+static void tree_print(Tree* t, int depth)
 {
     for (int i = 0; i < depth; i++)
     {
-        printf("--");
+        printf("  ");
     }
 
-    printf("name: %s, weight: %u\n", t->name, t->weight);
+    printf("'%.*s' (%lu)\n", t->nameLength, t->name, t->weight);
 
     for (Tree* v = t->firstChild; v; v = v->nextSibling)
     {
@@ -36,11 +38,29 @@ Tree* tree_print(Tree* t, int depth)
     }
 }
 
-Tree* tree_find(Tree* t, char* name, size_t nameLength)
+static void tree_add_child(Tree* t, Tree* v)
+{
+    v->parent = t;
+    
+    Tree* u = t->firstChild;
+
+    if (u)
+    {
+        v->nextSibling = u->nextSibling;
+        u->nextSibling = v;
+    }
+    else
+    {
+        t->firstChild = v;
+    }
+}
+
+static Tree* tree_find_child(Tree* t, char* name, size_t nameLength)
 {
     for (Tree* v = t->firstChild; v; v = v->nextSibling)
     {
-        if (memcmp(name, v->name, nameLength) == 0)
+        if (v->nameLength == nameLength &&
+            memcmp(name, v->name, nameLength) == 0)
         {
             return v;
         }
@@ -49,9 +69,20 @@ Tree* tree_find(Tree* t, char* name, size_t nameLength)
     return NULL;
 }
 
+static size_t main_name_length(char* name)
+{
+    size_t length = strlen(name);
+
+    while (isspace(name[length - 1]))
+    {
+        length--;
+    }
+    
+    return length;
+}
+
 int main()
 {
-    int n = 0;
     Tree* s = calloc(1, sizeof * s);
     Tree* t;
     char buffer[BUFFER_SIZE];
@@ -64,7 +95,7 @@ int main()
 
             if (memcmp(command, "cd", 2) == 0)
             {
-                char* name = buffer + 5;
+                char* name = command + 3;
 
                 if (*name == '/')
                 {
@@ -76,77 +107,44 @@ int main()
                 }
                 else
                 {
-                    size_t nameLength = strlen(name);
-
-                    if (name[nameLength - 1] == '\n')
-                    {
-                        nameLength--;
-                    }
-
-                    t = tree_find(t, name, nameLength);
+                    t = tree_find_child(t, name, main_name_length(name));
                 }
             }
         }
         else if (memcmp(buffer, "dir", 3) == 0)
         {
             char* name = buffer + 4;
+            size_t nameLength = main_name_length(name);
+            char* copy = malloc(nameLength * sizeof * copy);
+
+            memcpy(copy, name, nameLength);
 
             Tree* v = malloc(sizeof * v);
 
-            v->parent = t;
             v->firstChild = NULL;
             v->nextSibling = NULL;
+            v->name = copy;
+            v->nameLength = nameLength;
+            v->weight = 0;
 
-            size_t nameLength = strlen(name);
-
-            if (name[nameLength - 1] == '\n')
-            {
-                nameLength--;
-            }
-
-            memcpy(v->name, name, nameLength);
-
-            v->name[nameLength] = '\0';
-
-            Tree* u = t->firstChild;
-
-            if (u)
-            {
-                v->nextSibling = u->nextSibling;
-                u->nextSibling = v;
-            }
-            else
-            {
-                t->firstChild = v;
-            }
+            tree_add_child(t, v);
         }
         else
         {
             Tree* v = malloc(sizeof * v);
 
-            v->parent = t;
             v->firstChild = NULL;
             v->nextSibling = NULL;
-            *v->name = '\0';
+            v->name = NULL;
+            v->nameLength = 0;
             v->weight = strtoul(buffer, NULL, 10);
 
-            Tree* u = t->firstChild;
-
-            if (u)
-            {
-                v->nextSibling = u->nextSibling;
-                u->nextSibling = v;
-            }
-            else
-            {
-                t->firstChild = v;
-            }
+            tree_add_child(t, v);
         }
     }
 
     tree_print(s, 0);
-
-    printf("%d\n", n);
+    printf("%d\n", 0);
 
     return EXIT_SUCCESS;
 }

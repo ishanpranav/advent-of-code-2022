@@ -9,7 +9,7 @@
 
 int main()
 {
-    int a = 0;
+    unsigned int a = 0;
     char buffer[BUFFER_SIZE];
 
     while (fgets(buffer, BUFFER_SIZE, stdin))
@@ -37,7 +37,7 @@ int main()
         }
     }
 
-    printf("%d\n", a);
+    printf("%u\n", a);
 
     return EXIT_SUCCESS;
 }

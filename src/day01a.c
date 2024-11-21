@@ -9,8 +9,8 @@
 
 int main()
 {
-    long max = 0;
-    long sum = 0;
+    unsigned long max = 0;
+    unsigned long sum = 0;
     char buffer[BUFFER_SIZE];
 
     while (fgets(buffer, BUFFER_SIZE, stdin))
@@ -25,7 +25,7 @@ int main()
             sum = 0;
         }
 
-        long e = strtol(buffer, NULL, 10);
+        unsigned long e = strtoul(buffer, NULL, 10);
 
         sum += e;
     }
@@ -35,7 +35,7 @@ int main()
         max = sum;
     }
 
-    printf("%ld\n", max);
+    printf("%lu\n", max);
 
     return EXIT_SUCCESS;
 }

@@ -13,6 +13,6 @@ all: init \
 
 init:
 	mkdir -p ../bin
-
+	
 %: %.c
 	$(CC) $(CFLAGS) $< -o ../bin/$@

@@ -11,7 +11,7 @@
 
 static int main_step(char l[3][BUFFER_SIZE])
 {
-    int f[256] = { 0 };
+    unsigned int f[256] = { 0 };
 
     for (char* p = l[0]; *p != '\n' && *p != '\0'; p++)
     {

@@ -10,7 +10,7 @@
 
 int main()
 {
-    int n = 0;
+    unsigned int n = 0;
     char buffer[BUFFER_SIZE];
 
     while (fgets(buffer, BUFFER_SIZE, stdin))
@@ -30,7 +30,7 @@ int main()
         }
     }
 
-    printf("%d\n", n);
+    printf("%u\n", n);
 
     return EXIT_SUCCESS;
 }

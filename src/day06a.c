@@ -19,7 +19,7 @@ int main()
 
     while (i < read)
     {
-        if (d[(int)buffer[i]])
+        if (d[(unsigned int)buffer[i]])
         {
             i -= n - 1;
             n = 0;
@@ -27,7 +27,7 @@ int main()
             memset(d, false, 256);
         }
 
-        d[(int)buffer[i]] = true;
+        d[(unsigned int)buffer[i]] = true;
         i++;
         n++;
 

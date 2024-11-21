@@ -17,12 +17,12 @@ static int main_step(char a[BUFFER_SIZE])
 
     for (size_t i = 0; i < length; i++)
     {
-        discovered[(int)a[i]] = true;
+        discovered[(unsigned int)a[i]] = true;
     }
 
     for (size_t i = length; i < length * 2; i++)
     {
-        if (discovered[(int)a[i]])
+        if (discovered[(unsigned int)a[i]])
         {
             int priority = a[i] + 1;
 

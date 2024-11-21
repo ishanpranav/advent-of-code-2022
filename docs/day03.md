@@ -22,7 +22,7 @@ Let $\ell_0,\ell_1,\ell_2$ be lists.
 
 Let $e^\ast\in\ell_0$, $e^\ast\in\ell_1$, and $e^\ast\in\ell_2$.
 
- Let $E\subseteq\mathbb{N}$. For $0\leq i\leq 2$, for all $e\in\ell_i$, we have $e\in E$. Let $p(e)$ denote
+ Let $E\subseteq\mathbb{Z}$. For $0\leq i\leq 2$, for all $e\in\ell_i$, we have $e\in E$. Let $p(e)$ denote
 the priority of $e\in E$.
 
 Define $f_e$ for all $e\in E$.

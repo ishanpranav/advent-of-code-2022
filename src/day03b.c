@@ -15,17 +15,17 @@ static int main_step(char l[3][BUFFER_SIZE])
 
     for (char* p = l[0]; *p != '\n' && *p != '\0'; p++)
     {
-        f[(int)*p] |= 0x1;
+        f[(unsigned int)*p] |= 0x1;
     }
     
     for (char* p = l[1]; *p != '\n' && *p != '\0'; p++)
     {
-        f[(int)*p] |= 0x2;
+        f[(unsigned int)*p] |= 0x2;
     }
     
     for (char* p = l[2]; *p != '\n' && *p != '\0'; p++)
     {
-        if (f[(int)*p] == 0x3)
+        if (f[(unsigned int)*p] == 0x3)
         {
             int priority = *p + 1;
 

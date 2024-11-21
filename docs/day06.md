@@ -22,14 +22,14 @@ For $e\in\ell$:
 * assign $D\leftarrow D\cup\lbrace e\rbrace$;
 * assign $n\leftarrow n+1$;
 * assign $i\leftarrow i+1$;
-* if $n=4$, then return $i$.
+* if $n=k$, then return $i$.
 
 Return $+\infty$.
 
 ## Part A
 
-Perform Algorithm I with argument $k=4$.
+Return the result of Algorithm I with argument $k=4$.
 
 ## Part B
 
-Perform Algorithm I with argument $k=14$.
+Return the result of Algorithm I with argument $k=14$.

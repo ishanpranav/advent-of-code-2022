@@ -12,7 +12,7 @@ all: init \
 	day21a day21b day22a day22b day23a day23b day24a day24b day25z
 
 init:
-	mkdir ../bin
+	mkdir -p ../bin
 
 %: %.c
 	$(CC) $(CFLAGS) $< -o ../bin/$@

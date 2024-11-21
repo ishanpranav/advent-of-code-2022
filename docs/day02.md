@@ -5,7 +5,7 @@
 
 ## Part A
 
-Let $S=\{1,2,3\}$. Let $\ell$ be a list where for all $(s_0,s_1)\in\ell$ we
+Let $S=\lbrace 1,2,3\rbrace$. Let $\ell$ be a list where for all $(s_0,s_1)\in\ell$ we
 have $(s_0,s_1)\in S\times S$.
 
 Let $a\leftarrow 0$.
@@ -22,7 +22,7 @@ Return $a$.
 
 ## Part B
 
-Let $S=\{1,2,3\}$. Let $T=\{0,3,6\}$. Let $\ell$ be a list where for all
+Let $S=\lbrace 1,2,3\rbrace$. Let $T=\lbrace 0,3,6\rbrace$. Let $\ell$ be a list where for all
 $(s,t)\in\ell$ we have $(s,t)\in S\times T$.
 
 Let $a\leftarrow 0$.

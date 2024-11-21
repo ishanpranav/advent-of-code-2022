@@ -19,7 +19,7 @@ For $e\in\ell$:
   * assign $i\leftarrow i-(n-1)$;
   * assign $n\leftarrow 0$;
   * assign $D\leftarrow\emptyset$;
-* assign $D\leftarrow D\cup\{e\}$;
+* assign $D\leftarrow D\cup\lbrace e\rbrace$;
 * assign $n\leftarrow n+1$;
 * assign $i\leftarrow i+1$;
 * if $n=4$, then return $i$.

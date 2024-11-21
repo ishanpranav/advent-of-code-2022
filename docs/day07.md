@@ -4,7 +4,7 @@
 # Day 7: No Space Left on Device
 
 Let $T=(V,E)$ be a tree. Let $L\subseteq V$ denote the set of leaves in $T$.
-Let $w^*(v)$ denote the weight of $v\in L$.
+Let $w^\ast(v)$ denote the weight of $v\in L$.
 
 **Algorithm I.**
 
@@ -22,7 +22,7 @@ While $S$ is not empty, do:
 
 * $v\leftarrow$ top of $S$;
 * if $v\in D$, then:
-  * if $v\in L$, then assign $w_v\leftarrow w^*(v)$;
+  * if $v\in L$, then assign $w_v\leftarrow w^\ast(v)$;
   * otherwise, assign $w_v\leftarrow\sum_{\lbrace u,v\rbrace\in E}w_u$;
   * pop $S$;
 * otherwise:

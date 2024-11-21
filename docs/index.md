@@ -1,3 +1,6 @@
+<!-- index.md -->
+<!-- Licensed under the MIT license. -->
+
 # Advent of Code 2022
 
 This is a collection of solutions to the

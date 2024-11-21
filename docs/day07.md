@@ -29,16 +29,16 @@ While $S$ is not empty, do:
   * for $\{u,v\}\in E$, push $u$ onto $S$;
   * assign $D\leftarrow D\cup\{v\}$.
 
-Return $W$.
+Return $w_v$ for $v\in V$.
 
 ## Part A
 
-Let $W$ be the result of Algorithm I.
+Let $w_v$ for $v\in V$ be given by Algorithm I.
 
 Let $a\leftarrow 0$.
 
 For $v\in V\setminus L$:
 
-* if $W[v]\geq 10000$, then assign $a\leftarrow a+1$.
+* if $w_v\leq 10000$, then assign $a\leftarrow a+1$.
 
 Return $a$.

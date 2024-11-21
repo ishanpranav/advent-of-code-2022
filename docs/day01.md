@@ -9,7 +9,7 @@ $e\in\ell$, we have $e\in\mathbb{N}$.
 ## Part A
 
 Return
-$\underset{\ell\in L}{\max}\underset{{e\in\ell}}{\sum}e.$
+$\underset{\ell\in L}{\max}\left(\sum_{e\in\ell}e\right).$
 
 ## Part B
 
@@ -21,7 +21,7 @@ Let $m_2\leftarrow 0$.
 
 For $\ell\in L$:
 
-* assign $s\leftarrow\underset{e\in\ell}{\sum}e$;
+* assign $s\leftarrow\sum_{e\in\ell}e$;
 * if $s\leq m_2$, then continue to next $\ell$;
 * if $s\leq m_1$, then:
   * assign $m_2\leftarrow s$;

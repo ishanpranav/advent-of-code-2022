@@ -8,7 +8,7 @@
 Let $(a_1,\dots,a_{2n})$ be a $2n$-element list. Let $p(a_i)$ denote the
 priority of element $1\leq i\leq 2n$.
 
-Let $D\leftarrow\{a_i\,|\,1\leq i\leq n\}$.
+Let $D\leftarrow\{a_i\,:\,1\leq i\leq n\}$.
 
 For $i\in(n,\dots,2n)$:
 

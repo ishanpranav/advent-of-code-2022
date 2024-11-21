@@ -34,4 +34,4 @@ For $\ell\in L$:
 * assign $m_1\leftarrow m_0$;
 * assign $m_0\leftarrow s$.
 
-Return $\sum_{i=0}^2{m_i}.$
+Return $m_0+m_1+m_2$.

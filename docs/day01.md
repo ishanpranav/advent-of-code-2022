@@ -9,7 +9,7 @@ $e\in\ell$, we have $e\in\mathbb{N}$.
 ## Part A
 
 Return
-$\begin{equation}\underset{\ell\in L}{\max}\sum_{e\in\ell}e.\end{equation}$
+$\underset{\ell\in L}{\max}\sum_{e\in\ell}e.$
 
 ## Part B
 
@@ -34,4 +34,4 @@ For $\ell\in L$:
 * assign $m_1\leftarrow m_0$;
 * assign $m_0\leftarrow s$.
 
-Return $\begin{equation}\sum_{i=0}^2{m_i}.\end{equation}$
+Return $\sum_{i=0}^2{m_i}.$

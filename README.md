@@ -2,7 +2,7 @@
 
 This is a collection of solutions to the
 [Advent of Code 2022](https://adventofcode.com/2022) programming problems
-implemented in the C programming language. I am focusing on efficient solutions
+implemented in the C programming language. We am focusing on efficient solutions
 and including formal pseudocode with each solution.
 
 ## Authors

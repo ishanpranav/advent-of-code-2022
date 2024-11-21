@@ -60,7 +60,7 @@ static size_t main_name_length(char* name)
     {
         length--;
     }
-    
+
     return length;
 }
 
@@ -93,8 +93,15 @@ int main()
                     t = tree_find_child(t, name, main_name_length(name));
                 }
             }
+
+            continue;
         }
-        else if (memcmp(buffer, "dir", 3) == 0)
+
+        Tree* v = malloc(sizeof * v);
+
+        v->firstChild = NULL;
+
+        if (memcmp(buffer, "dir", 3) == 0)
         {
             char* name = buffer + 4;
             size_t nameLength = main_name_length(name);
@@ -102,28 +109,20 @@ int main()
 
             memcpy(copy, name, nameLength);
 
-            Tree* v = malloc(sizeof * v);
-
-            v->firstChild = NULL;
             v->name = copy;
             v->nameLength = nameLength;
             v->weight = 0;
-            v->parent = t;
-            v->nextSibling = t->firstChild;
-            t->firstChild = v;
         }
         else
         {
-            Tree* v = malloc(sizeof * v);
-
-            v->firstChild = NULL;
             v->name = NULL;
             v->nameLength = 0;
             v->weight = strtoul(buffer, NULL, 10);
-            v->parent = t;
-            v->nextSibling = t->firstChild;
-            t->firstChild = v;
         }
+        
+        v->parent = t;
+        v->nextSibling = t->firstChild;
+        t->firstChild = v;
     }
 
     tree_print(s, 0);

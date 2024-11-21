@@ -2,8 +2,8 @@
 
 This is a collection of solutions to the
 [Advent of Code 2022](https://adventofcode.com/2022) programming problems solved
-by Ishan Pranav and Iris Lim and implemented in the C programming language by
-Ishan Pranav.
+by Ishan Pranav and Iris Lim in 2023. The programs were implemented in the C
+programming language by Ishan Pranav.
 
 For this project, we focus on efficient algorithms and include formal pseudocode
 for each solution.

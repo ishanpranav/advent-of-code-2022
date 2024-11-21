@@ -18,12 +18,14 @@ Return $0$.
 
 ## Part B
 
-Let $\ell_0,\ell_1,\ell_2$ be lists. Let $e^\ast\in\ell_0$, $e^\ast\in\ell_1$,
-and $e^\ast\in\ell_2$. For $1\leq i\leq 2$, for all $e\in\ell_i$, we have
-$e\in\lbrace 0,\dots,255\rbrace$. Let $p(e)$ denote the priority of
-$e\in\lbrace 0,\dots,255\rbrace$.
+Let $\ell_0,\ell_1,\ell_2$ be lists.
 
-Define $f_e$ for all $e\in\lbrace 0,\dots,255\rbrace$.
+Let $e^\ast\in\ell_0$, $e^\ast\in\ell_1$, and $e^\ast\in\ell_2$.
+
+ Let $E\subseteq\mathbb{N}$. For $0\leq i\leq 2$, for all $e\in\ell_i$, we have $e\in E$. Let $p(e)$ denote
+the priority of $e\in E$.
+
+Define $f_e$ for all $e\in E$.
 
 For $e\in\ell_0$: assign $f_e\leftarrow f_e\text{ bitwise OR }01_2$.
 

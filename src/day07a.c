@@ -38,23 +38,6 @@ static void tree_print(Tree* t, int depth)
     }
 }
 
-static void tree_add_child(Tree* t, Tree* v)
-{
-    v->parent = t;
-    
-    Tree* u = t->firstChild;
-
-    if (u)
-    {
-        v->nextSibling = u->nextSibling;
-        u->nextSibling = v;
-    }
-    else
-    {
-        t->firstChild = v;
-    }
-}
-
 static Tree* tree_find_child(Tree* t, char* name, size_t nameLength)
 {
     for (Tree* v = t->firstChild; v; v = v->nextSibling)
@@ -122,24 +105,24 @@ int main()
             Tree* v = malloc(sizeof * v);
 
             v->firstChild = NULL;
-            v->nextSibling = NULL;
             v->name = copy;
             v->nameLength = nameLength;
             v->weight = 0;
-
-            tree_add_child(t, v);
+            v->parent = t;
+            v->nextSibling = t->firstChild;
+            t->firstChild = v;
         }
         else
         {
             Tree* v = malloc(sizeof * v);
 
             v->firstChild = NULL;
-            v->nextSibling = NULL;
             v->name = NULL;
             v->nameLength = 0;
             v->weight = strtoul(buffer, NULL, 10);
-
-            tree_add_child(t, v);
+            v->parent = t;
+            v->nextSibling = t->firstChild;
+            t->firstChild = v;
         }
     }
 

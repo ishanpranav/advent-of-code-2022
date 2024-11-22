@@ -45,7 +45,7 @@ static size_t main_name_length(char* name)
 {
     size_t length = strlen(name);
 
-    while (isspace(name[length - 1]))
+    while (length > 1 && isspace(name[length - 1]))
     {
         length--;
     }

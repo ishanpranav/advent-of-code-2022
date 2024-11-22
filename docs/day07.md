@@ -19,7 +19,7 @@ Let $D\leftarrow\emptyset$.
 
 Push $s$ onto $S$.
 
-While $S$ is not empty, do:
+While $S$ is not empty:
 
 * let $u\leftarrow$ top of $S$;
 * if $u\in D$, then:

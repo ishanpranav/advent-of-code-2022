@@ -20,58 +20,6 @@ struct Matrix
 
 typedef struct Matrix Matrix;
 
-static bool main_is_visible_left(Matrix* a, size_t i, size_t j)
-{
-    for (size_t x = 0; x < j; x++)
-    {
-        if (a->data[i][x] >= a->data[i][j])
-        {
-            return false;
-        }
-    }
-
-    return true;
-}
-
-static bool main_is_visible_right(Matrix* a, size_t i, size_t j)
-{
-    for (size_t x = j + 1; x < a->n; x++)
-    {
-        if (a->data[i][x] >= a->data[i][j])
-        {
-            return false;
-        }
-    }
-
-    return true;
-}
-
-static bool main_is_visible_up(Matrix* a, size_t i, size_t j)
-{
-    for (size_t y = 0; y < i; y++)
-    {
-        if (a->data[y][j] >= a->data[i][j])
-        {
-            return false;
-        }
-    }
-
-    return true;
-}
-
-static bool main_is_visible_down(Matrix* a, size_t i, size_t j)
-{
-    for (size_t y = i + 1; y < a->m; y++)
-    {
-        if (a->data[y][j] >= a->data[i][j])
-        {
-            return false;
-        }
-    }
-
-    return true;
-}
-
 int main()
 {
     size_t k = 0;
@@ -96,20 +44,6 @@ int main()
     {
         a.m++;
     }
-
-    // for (size_t i = 1; i < a.m - 1; i++)
-    // {
-    //     for (size_t j = 1; j < a.n - 1; j++)
-    //     {
-    //         if (main_is_visible_left(&a, i, j) ||
-    //             main_is_visible_right(&a, i, j) ||
-    //             main_is_visible_up(&a, i, j) ||
-    //             main_is_visible_down(&a, i, j))
-    //         {
-    //             k++;
-    //         }
-    //     }
-    // }
 
     bool visible[MAX_M][MAX_N] = { 0 };
 

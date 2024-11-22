@@ -4,6 +4,7 @@
 // No Space Left On Device
 
 #include <ctype.h>
+#include <limits.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -117,8 +118,6 @@ int main()
         list = v;
     }
 
-    unsigned long sum = 0;
-
     Tree* stack = s;
 
     s->parent = NULL;
@@ -132,11 +131,6 @@ int main()
             for (Tree* v = u->firstChild; v; v = v->nextSibling)
             {
                 u->weight += v->weight;
-            }
-
-            if (u->firstChild && u->weight <= 100000)
-            {
-                sum += u->weight;
             }
 
             stack = stack->parent;
@@ -153,10 +147,18 @@ int main()
         }
     }
 
+    unsigned long min = ULONG_MAX;
+
     while (list)
     {
         Tree* u = list;
         Tree* v = list->nextList;
+
+        if (u->firstChild && u->weight <= min &&
+            70000000 - (s->weight - u->weight) >= 30000000)
+        {
+            min = u->weight;
+        }
 
         if (u->name)
         {
@@ -168,7 +170,7 @@ int main()
         list = v;
     }
 
-    printf("%lu\n", sum);
+    printf("%lu\n", min);
 
     return EXIT_SUCCESS;
 }

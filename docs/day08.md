@@ -4,7 +4,10 @@
 # Day 8: Treetop Tree House
 
 Let
-$\mathbf{A} = \begin{bmatrix}a_{0,0} & a_{0,1} & \dots & a_{0,n-1} \\a_{1,0} & a_{1,1} & \dots & a_{1,n-1} \\\vdots & \vdots & \ddots & \vdots \\a_{m-1,0} & a_{m-1,1} & \dots & a_{m-1,n-1}\end{bmatrix}$
+$\mathbf{A} = \begin{bmatrix}a_{0,0} & a_{0,1} & \dots & a_{0,n-1} \\
+a_{1,0} & a_{1,1} & \dots & a_{1,n-1} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m-1,0} & a_{m-1,1} & \dots & a_{m-1,n-1}\end{bmatrix}$
 where $a_{i,j} \in\lbrace 0,\dots,9\rbrace$.
 
 ## Part 1
@@ -16,7 +19,10 @@ If $m=1$, then return $n$.
 If $n=1$, then return $m$.
 
 Let
-$\mathbf{B} = \begin{bmatrix}b_{0,0} & b_{0,1} & \dots & b_{0,n-1} \\b_{1,0} & b_{1,1} & \dots & b_{1,n-1} \\\vdots & \vdots & \ddots & \vdots \\b_{m-1,0} & b_{m-1,1} & \dots & b_{m-1,n-1}\end{bmatrix}$
+$\mathbf{B} = \begin{bmatrix}b_{0,0} & b_{0,1} & \dots & b_{0,n-1} \\
+b_{1,0} & b_{1,1} & \dots & b_{1,n-1} \\
+\vdots & \vdots & \ddots & \vdots \\
+b_{m-1,0} & b_{m-1,1} & \dots & b_{m-1,n-1}\end{bmatrix}$
 where $b_{i,j} \in\lbrace 0,1\rbrace$; assign $b_{i,j}\leftarrow 0$.
 
 For $i\in(1,\dots,m-2)$:

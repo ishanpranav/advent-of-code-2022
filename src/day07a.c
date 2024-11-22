@@ -4,6 +4,7 @@
 // No Space Left On Device
 
 #include <ctype.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -15,12 +16,15 @@ typedef struct Tree Tree;
 
 struct Tree
 {
+    bool visited;
     unsigned int nameLength;
     unsigned long weight;
     char* name;
     Tree* parent;
     Tree* firstChild;
     Tree* nextSibling;
+    Tree* nextStack;
+    Tree* nextList;
 };
 
 static void tree_print(Tree* t, int depth)
@@ -68,6 +72,7 @@ int main()
 {
     Tree* s = calloc(1, sizeof * s);
     Tree* t;
+    Tree* list = s;
     char buffer[BUFFER_SIZE];
 
     while (fgets(buffer, BUFFER_SIZE, stdin))
@@ -100,6 +105,7 @@ int main()
         Tree* v = malloc(sizeof * v);
 
         v->firstChild = NULL;
+        v->visited = false;
 
         if (memcmp(buffer, "dir", 3) == 0)
         {
@@ -119,14 +125,66 @@ int main()
             v->nameLength = 0;
             v->weight = strtoul(buffer, NULL, 10);
         }
-        
+
         v->parent = t;
         v->nextSibling = t->firstChild;
         t->firstChild = v;
+        v->nextList = list;
+        list = v;
     }
 
-    tree_print(s, 0);
-    printf("%d\n", 0);
+    unsigned long sum = 0;
+
+    Tree* stack = s;
+
+    s->nextStack = NULL;
+
+    while (stack)
+    {
+        Tree* u = stack;
+
+        if (u->visited)
+        {
+            for (Tree* v = u->firstChild; v; v = v->nextSibling)
+            {
+                u->weight += v->weight;
+            }
+
+            if (u->firstChild && u->weight <= 100000)
+            {
+                sum += u->weight;
+            }
+
+            stack = stack->nextStack;
+        }
+        else
+        {
+            for (Tree* v = u->firstChild; v; v = v->nextSibling)
+            {
+                v->nextStack = stack;
+                stack = v;
+            }
+
+            u->visited = true;
+        }
+    }
+
+    while (list)
+    {
+        Tree* u = list;
+        Tree* v = list->nextList;
+
+        if (u->name)
+        {
+            free(u->name);
+        }
+
+        free(u);
+
+        list = v;
+    }
+
+    printf("%lu\n", sum);
 
     return EXIT_SUCCESS;
 }

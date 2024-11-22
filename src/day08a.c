@@ -97,14 +97,83 @@ int main()
         a.m++;
     }
 
+    // for (size_t i = 1; i < a.m - 1; i++)
+    // {
+    //     for (size_t j = 1; j < a.n - 1; j++)
+    //     {
+    //         if (main_is_visible_left(&a, i, j) ||
+    //             main_is_visible_right(&a, i, j) ||
+    //             main_is_visible_up(&a, i, j) ||
+    //             main_is_visible_down(&a, i, j))
+    //         {
+    //             k++;
+    //         }
+    //     }
+    // }
+
+    bool visible[MAX_M][MAX_N] = { 0 };
+
+    for (size_t i = 1; i < a.m - 1; i++)
+    {
+        char max = a.data[i][0];
+
+        for (size_t j = 1; j < a.n - 1; j++)
+        {
+            if (a.data[i][j] > max)
+            {
+                max = a.data[i][j];
+                visible[i][j] = true;
+            }
+        }
+    }
+
+    for (size_t i = 1; i < a.m - 1; i++)
+    {
+        char max = a.data[i][a.n - 1];
+
+        for (size_t j = a.n - 1; j >= 1; j--)
+        {
+            if (a.data[i][j] > max)
+            {
+                max = a.data[i][j];
+                visible[i][j] = true;
+            }
+        }
+    }
+
+    for (size_t j = 1; j < a.n - 1; j++)
+    {
+        char max = a.data[0][j];
+
+        for (size_t i = 1; i < a.m - 1; i++)
+        {
+            if (a.data[i][j] > max)
+            {
+                max = a.data[i][j];
+                visible[i][j] = true;
+            }
+        }
+    }
+
+    for (size_t j = 1; j < a.n - 1; j++)
+    {
+        char max = a.data[a.m - 1][j];
+
+        for (size_t i = a.m - 1; i >= 1; i--)
+        {
+            if (a.data[i][j] > max)
+            {
+                max = a.data[i][j];
+                visible[i][j] = true;
+            }
+        }
+    }
+
     for (size_t i = 1; i < a.m - 1; i++)
     {
         for (size_t j = 1; j < a.n - 1; j++)
         {
-            if (main_is_visible_left(&a, i, j) ||
-                main_is_visible_right(&a, i, j) ||
-                main_is_visible_up(&a, i, j) ||
-                main_is_visible_down(&a, i, j))
+            if (visible[i][j])
             {
                 k++;
             }

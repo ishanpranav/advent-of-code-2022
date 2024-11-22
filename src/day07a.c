@@ -23,7 +23,6 @@ struct Tree
     Tree* parent;
     Tree* firstChild;
     Tree* nextSibling;
-    Tree* nextStack;
     Tree* nextList;
 };
 
@@ -137,7 +136,7 @@ int main()
 
     Tree* stack = s;
 
-    s->nextStack = NULL;
+    s->parent = NULL;
 
     while (stack)
     {
@@ -155,13 +154,13 @@ int main()
                 sum += u->weight;
             }
 
-            stack = stack->nextStack;
+            stack = stack->parent;
         }
         else
         {
             for (Tree* v = u->firstChild; v; v = v->nextSibling)
             {
-                v->nextStack = stack;
+                v->parent = stack;
                 stack = v;
             }
 

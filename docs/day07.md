@@ -13,7 +13,7 @@ Let $s\in V$.
 
 Define $w_v$ for $v\in V$.
 
-Initialize a stack $S$.
+Let $S$ be an empty stack.
 
 Let $D\leftarrow\emptyset$.
 

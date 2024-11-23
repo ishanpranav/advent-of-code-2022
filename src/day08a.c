@@ -91,10 +91,7 @@ static size_t main_step(char a[MAX_M][MAX_N], size_t m, size_t n)
     {
         for (size_t j = 1; j < n - 1; j++)
         {
-            if (b[i][j])
-            {
-                sum++;
-            }
+            sum += b[i][j];
         }
     }
 

@@ -29,7 +29,6 @@ Let $(k_0,\dots,k_n)$ be a list of $n$ lists.
 For $(a,b,c)\in\ell$:
 
 * let $s\leftarrow$ remove last $c$ elements of $k_a$;
-* reverse $s$;
 * assign $k_b\leftarrow$ concatenate $k_b,s$.
 
 Let $m=()$.

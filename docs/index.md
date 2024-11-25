@@ -21,6 +21,7 @@ Ishan Pranav and Iris Lim
 - [Day 2](/advent-of-code-2022/day02)
 - [Day 3](/advent-of-code-2022/day03)
 - [Day 4](/advent-of-code-2022/day04)
+- [Day 5](/advent-of-code-2022/day05)
 - [Day 6](/advent-of-code-2022/day06)
 - [Day 7](/advent-of-code-2022/day07)
 - [Day 8](/advent-of-code-2022/day08)

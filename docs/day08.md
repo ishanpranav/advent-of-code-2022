@@ -49,18 +49,16 @@ For $j\in(1,\dots,n-2)$:
     * assign $a^\ast\leftarrow a_{i,j}$;
     * assign $b_{i,j}\leftarrow 1$.
 
-Return $\overset{m-1}{\underset{i=0}{\sum}}\sum_{j=0}^{n-1}b_{i,j}+2m+2n-4$.
+Return $\sum_{i=0}^{m-1}\sum_{j=0}^{n-1}b_{i,j}+2m+2n-4$.
 
 ## Part 2
 
-Let $\mathbf{B}=(b_{i,j})$ be a matrix for $0\leq i\lt n$ and $0\leq j\lt m$;
-assign $b_{i,j}\leftarrow 0$.
-
-Define $k_x$ for $x\in\lbrace 0,\dots,9\rbrace$.
+Let $\mathbf{B}=(b_{i,j})$ be a matrix for $0\leq i\lt n$ and $0\leq j\lt m$.
 
 For $i\in(0,\dots,m)$:
 
 * for $j\in(0,\dots,n)$:
-  * let $j^\ast\leftarrow\underset{x\in\lbrace a_{i,j},\dots 9\rbrace}{\max}(k_x)$;
-  * assign $b_{i,j}\leftarrow j-j^\ast$;
+  * define $k_x$ for $x\in\lbrace 0,\dots,9\rbrace$; assign $k_x\leftarrow 0$;
+  * let $j^\ast\leftarrow\underset{x\in\lbrace a_{i,j},\dots,9\rbrace}{\max}(k_x)$;
+  * assign $b_{i,j}\leftarrow b_{i,j}\times(j-j^\ast)$;
   * assign $k_{a_{i,j}}\leftarrow j$.

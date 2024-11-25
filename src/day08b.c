@@ -4,7 +4,6 @@
 // Treetop Tree House
 
 #include <ctype.h>
-#include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -36,62 +35,113 @@ int main()
     }
 
     size_t max = 0;
-    size_t count[MAX_M][MAX_N] = { 0 };
+    size_t b[MAX_M][MAX_N];
 
-    for (size_t i = 1; i < m - 1; i++)
+    for (size_t i = 0; i < m; i++)
     {
-        for (size_t j = 1; j < n - 1; j++)
+        for (size_t j = 0; j < n; j++)
         {
-            size_t left = 0;
-            size_t right = 0;
-            size_t up = 0;
-            size_t down = 0;
+            b[i][j] = 1;
+        }
+    }
 
-            for (size_t x = j - 1; x != SIZE_MAX; x--)
-            {
-                left++;
+    for (size_t i = 0; i < m; i++)
+    {
+        size_t k[10] = { 0 };
+        
+        for (size_t j = 0; j < n; j++)
+        {
+            size_t max = 0;
+            unsigned int current = a[i][j] - '0';
 
-                if (a[i][x] >= a[i][j])
-                {
-                    break;
-                }
-            }
-            
-            for (size_t x = j + 1; x < n; x++)
+            for (unsigned int x = current; x < 10; x++)
             {
-                right++;
-                
-                if (a[i][x] >= a[i][j])
+                if (k[x] > max)
                 {
-                    break;
+                    max = k[x];
                 }
             }
 
-            for (size_t y = i - 1; y != SIZE_MAX; y--)
+            b[i][j] *= j - max;
+            k[current] = j;
+        }
+    }
+
+    for (size_t i = 0; i < m; i++)
+    {
+        size_t k[10] = { 0 };
+        
+        for (size_t j = n - 1; j != SIZE_MAX; j--)
+        {
+            size_t max = 0;
+            unsigned int current = a[i][j] - '0';
+
+            for (unsigned int x = current; x < 10; x++)
             {
-                up++;
-                
-                if (a[y][j] >= a[i][j])
+                if (k[x] > max)
                 {
-                    break;
-                }
-            }
-            
-            for (size_t y = i + 1; y < m; y++)
-            {
-                down++;
-                
-                if (a[y][j] >= a[i][j])
-                {
-                    break;
+                    max = k[x];
                 }
             }
 
-            size_t k = up * down * left * right;
+            b[i][j] *= j - max;
+            k[current] = j;
 
-            if (k > max)
+            printf("right length of %d is %zu\n", current, j - max);
+        }
+    }
+
+    for (size_t j = 0; j < n; j++)
+    {
+        size_t k[10] = { 0 };
+
+        for (size_t i = 0; i < m; i++)
+        {
+            size_t max = 0;
+            unsigned int current = a[i][j] - '0';
+
+            for (unsigned int x = current; x < 10; x++)
             {
-                max = k;
+                if (k[x] > max)
+                {
+                    max = k[x];
+                }
+            }
+
+            b[i][j] *= j - max;
+            k[current] = j;
+        }
+    }
+
+    for (size_t j = 0; j < n; j++)
+    {
+        size_t k[10] = { 0 };
+
+        for (size_t i = m - 1; i != SIZE_MAX; i--)
+        {
+            size_t max = 0;
+            unsigned int current = a[i][j] - '0';
+
+            for (unsigned int x = current; x < 10; x++)
+            {
+                if (k[x] > max)
+                {
+                    max = k[x];
+                }
+            }
+
+            b[i][j] *= j - max;
+            k[current] = j;
+        }
+    }
+
+    for (size_t i = 0; i < m; i++)
+    {
+        for (size_t j = 0; j < n; j++)
+        {
+            if (b[i][j] > max)
+            {
+                max = b[i][j];
             }
         }
     }

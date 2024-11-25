@@ -105,7 +105,6 @@ int main()
         {
             a--;
             b--;
-
             stacks[a].count -= c;
 
             char* aLast = stacks[a].items + stacks[a].count;

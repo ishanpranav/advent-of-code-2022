@@ -16,7 +16,7 @@ For $(a,b,c)\in\ell$:
   * let $s\leftarrow$ pop $S_a$;
   * push $s$ onto $S_b$.
 
-Let $m=()$.
+Let $m\leftarrow()$.
 
 For $S\in(S_0,\dots,S_n)$, append top of $S$ to $m$.
 
@@ -31,7 +31,7 @@ For $(a,b,c)\in\ell$:
 * let $s\leftarrow$ remove last $c$ elements of $k_a$;
 * assign $k_b\leftarrow$ concatenate $k_b,s$.
 
-Let $m=()$.
+Let $m\leftarrow()$.
 
 For $k\in(k_0,\dots,k_n)$, append last element of $k$ to $m$.
 

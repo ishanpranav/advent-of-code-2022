@@ -34,7 +34,6 @@ int main()
         m++;
     }
 
-    size_t max = 0;
     size_t b[MAX_M][MAX_N];
 
     for (size_t i = 0; i < m; i++)
@@ -69,32 +68,35 @@ int main()
 
     for (size_t i = 0; i < m; i++)
     {
-        size_t k[10] = { 0 };
+        size_t k[10];
+
+        for (unsigned int x = 0; x < 10; x++)
+        {
+            k[x] = n - 1;
+        }
         
         for (size_t j = n - 1; j != SIZE_MAX; j--)
         {
-            size_t max = 0;
+            size_t min = n - 1;
             unsigned int current = a[i][j] - '0';
 
             for (unsigned int x = current; x < 10; x++)
             {
-                if (k[x] > max)
+                if (k[x] < min)
                 {
-                    max = k[x];
+                    min = k[x];
                 }
             }
 
-            b[i][j] *= j - max;
+            b[i][j] *= min - j;
             k[current] = j;
-
-            printf("right length of %d is %zu\n", current, j - max);
         }
     }
 
     for (size_t j = 0; j < n; j++)
     {
         size_t k[10] = { 0 };
-
+        
         for (size_t i = 0; i < m; i++)
         {
             size_t max = 0;
@@ -108,32 +110,39 @@ int main()
                 }
             }
 
-            b[i][j] *= j - max;
-            k[current] = j;
+            b[i][j] *= i - max;
+            k[current] = i;
         }
     }
 
     for (size_t j = 0; j < n; j++)
     {
-        size_t k[10] = { 0 };
-
+        size_t k[10];
+        
+        for (unsigned int x = 0; x < 10; x++)
+        {
+            k[x] = m - 1;
+        }
+        
         for (size_t i = m - 1; i != SIZE_MAX; i--)
         {
-            size_t max = 0;
+            size_t min = m - 1;
             unsigned int current = a[i][j] - '0';
 
             for (unsigned int x = current; x < 10; x++)
             {
-                if (k[x] > max)
+                if (k[x] < min)
                 {
-                    max = k[x];
+                    min = k[x];
                 }
             }
 
-            b[i][j] *= j - max;
-            k[current] = j;
+            b[i][j] *= min - i;
+            k[current] = i;
         }
     }
+
+    size_t max = 0;
 
     for (size_t i = 0; i < m; i++)
     {

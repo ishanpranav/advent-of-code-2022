@@ -58,19 +58,14 @@ int main()
 
     size_t stackCount = 0;
 
-    while (fgets(buffer, BUFFER_SIZE, stdin))
+    while (fgets(buffer, BUFFER_SIZE, stdin) && *buffer != '\n')
     {
-        if (*buffer == '\n')
-        {
-            break;
-        }
-
         size_t n = strlen(buffer);
 
         while (n > 1 && isspace(buffer[n - 1]))
         {
             n--;
-        } 
+        }
 
         size_t stack = 0;
 

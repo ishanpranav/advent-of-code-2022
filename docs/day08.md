@@ -53,11 +53,11 @@ Return $\sum_{i=0}^{m-1}\sum_{j=0}^{n-1}b_{i,j}+2m+2n-4$.
 
 ## Part 2
 
-Let $\mathbf{B}=(b_{i,j})$ be a matrix for $0\leq i\lt m$ and $0\leq j\lt n$.
+Let $\mathbf{B}=(b_{i,j})$ be a matrix for $0\leq i\lt m$ and $0\leq j\lt n$; assign $b_{i,j}\leftarrow 1$.
 
 For $i\in(0,\dots,m-1)$:
 
-* define $k_x$ for $x\in\lbrace 0,\dots,9\rbrace$; assign $k_x\leftarrow 0$;
+* let $k_x\leftarrow 0$ for $x\in\lbrace 0,\dots,9\rbrace$;
 * for $j\in(0,\dots,n-1)$:
   * let $j^\ast\leftarrow\underset{x\in\lbrace a_{i,j},\dots,9\rbrace}{\max}(k_x)$;
   * assign $b_{i,j}\leftarrow b_{i,j}\times(j-j^\ast)$;
@@ -65,7 +65,7 @@ For $i\in(0,\dots,m-1)$:
 
 For $i\in(0,\dots,m-1)$:
 
-* define $k_x$ for $x\in\lbrace 0,\dots,9\rbrace$; assign $k_x\leftarrow n-1$;
+* let $k_x\leftarrow n-1$ for $x\in\lbrace 0,\dots,9\rbrace$;
 * for $j\in(n-1,\dots,0)$:
   * let $j^\ast\leftarrow\underset{x\in\lbrace a_{i,j},\dots,9\rbrace}{\min}(k_x)$;
   * assign $b_{i,j}\leftarrow b_{i,j}\times(j^\ast-j)$;
@@ -73,7 +73,7 @@ For $i\in(0,\dots,m-1)$:
 
 For $j\in(0,\dots,n-1)$:
 
-* define $k_x$ for $x\in\lbrace 0,\dots,9\rbrace$; assign $k_x\leftarrow 0$;
+* let $k_x\leftarrow 0$ for $x\in\lbrace 0,\dots,9\rbrace$;
 * for $i\in(0,\dots,m-1)$:
   * let $i^\ast\leftarrow\underset{x\in\lbrace a_{i,j},\dots,9\rbrace}{\max}(k_x)$;
   * assign $b_{i,j}\leftarrow b_{i,j}\times(i-i^\ast)$;
@@ -81,7 +81,7 @@ For $j\in(0,\dots,n-1)$:
 
 For $j\in(0,\dots,n-1)$:
 
-* define $k_x$ for $x\in\lbrace 0,\dots,9\rbrace$; assign $k_x\leftarrow m-1$;
+* let $k_x\leftarrow m-1$ for $x\in\lbrace 0,\dots,9\rbrace$;
 * for $i\in(m-1,\dots,0)$:
   * let $i^\ast\leftarrow\underset{x\in\lbrace a_{i,j},\dots,9\rbrace}{\min}(k_x)$;
   * assign $b_{i,j}\leftarrow b_{i,j}\times(i-i^\ast)$;
